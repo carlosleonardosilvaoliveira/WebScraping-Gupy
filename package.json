@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "2captcha": "^3.0.5",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "proxy-chain": "^2.2.0",
+    "puppeteer": "^19.4.1",
+    "puppeteer-extra": "^3.3.4",
+    "puppeteer-extra-plugin-recaptcha": "^3.6.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.1",
+    "random-useragent": "^0.5.0",
+    "user-agents": "^1.0.1236"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "webscraping-gupy",
+  "version": "1.0.0",
+  "main": "Server.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

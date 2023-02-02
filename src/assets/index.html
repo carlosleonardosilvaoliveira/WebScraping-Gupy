@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Scrapping</title>
+</head>
+<body>
+
+<div id="App">
+    <form method="POST">
+        <input id="website" type="text">
+        <button type="submit" id="btn-submit">Copiar</button>
+    </form>
+</div>
+
+<script type="application/javascript">
+
+    //RECEBE OS DADOS DO USUÁRIO
+    const form = {
+        website: document.querySelector('#website'),
+        submit: document.querySelector("#btn-submit"),
+    };
+
+    let button = form.submit.addEventListener("click", (e) => {
+        e.preventDefault();
+        const funcao = "http://localhost:3000/gupy/scrap";
+
+        fetch(funcao, {
+            method: "POST",
+            headers: {
+                Accept: "application/json, text/plain, */*",
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                website: form.website.value
+            }),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                // console.log(data);
+
+                if(data.error) {
+                    alert("Algo deu errado!");
+                } else {
+                    //window.open("http://localhost:3030/web/site");
+                }
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    });
+</script>
+
+
+</body>
+</html>
